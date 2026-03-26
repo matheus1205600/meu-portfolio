@@ -8,7 +8,7 @@ const meusProjetos = [
     {
         titulo: "Calculadora Interativa",
         descricao: "Lógica matemática utilizando JavaScript ES6.",
-        link: "[https://github.com/seu-usuario/projeto-2](https://github.com/seu-usuario/projeto-2)"
+        link: "https://github.com/seu-usuario/projeto-2(https://github.com/seu-usuario/projeto-2)"
     },
     {
         titulo: "E-commerce Estático",
