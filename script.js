@@ -1,28 +1,36 @@
-// Lista de projetos (Array de Objetos)
+// Array de objetos contendo os projetos (Exigência da UAPI)
 const meusProjetos = [
     {
-        titulo: "Página de Captura",
-        descricao: "Site feito com HTML e CSS.",
-        link: "https://github.com"
+        titulo: "Projeto Landing Page",
+        descricao: "Página de conversão feita com HTML e CSS puro.",
+        link: "[https://github.com/seu-usuario/projeto-1](https://github.com/seu-usuario/projeto-1)"
     },
     {
-        titulo: "Calculadora JS",
-        descricao: "Lógica de programação pura.",
-        link: "https://github.com"
+        titulo: "Calculadora Interativa",
+        descricao: "Lógica matemática utilizando JavaScript ES6.",
+        link: "[https://github.com/seu-usuario/projeto-2](https://github.com/seu-usuario/projeto-2)"
+    },
+    {
+        titulo: "E-commerce Estático",
+        descricao: "Simulação de loja virtual com layout em CSS Grid.",
+        link: "[https://github.com/seu-usuario/projeto-3](https://github.com/seu-usuario/projeto-3)"
     }
 ];
 
-// Seleciona onde os projetos vão aparecer
-const container = document.getElementById('lista-projetos');
+const listaProjetos = document.getElementById('lista-projetos');
 
-// Cria os cards na tela
-meusProjetos.forEach(projeto => {
-    const card = document.createElement('div');
-    card.className = 'card-projeto';
-    card.innerHTML = `
-        <h3>${projeto.titulo}</h3>
-        <p>${projeto.descricao}</p>
-        <a href="${projeto.link}" target="_blank">Ver mais</a>
-    `;
-    container.appendChild(card);
-});
+function renderizarProjetos() {
+    if (!listaProjetos) return;
+    listaProjetos.innerHTML = "";
+    
+    meusProjetos.forEach(projeto => {
+        const div = document.createElement('div');
+        div.className = 'card-projeto';
+        div.innerHTML = `
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+            <a href="${projeto.link}" target="_blank">Ver no GitHub</a>
+        `;
+        listaProjetos.appendChild(div);
+    });
+}
